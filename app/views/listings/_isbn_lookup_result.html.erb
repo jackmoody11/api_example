@@ -8,7 +8,7 @@
       <div class="col-sm-8">
         <%= f.text_field :isbn , class: "form-control" , id: "isbn_field",
             placeholder: "ISBN (10 or 13 digits - no dashes)",
-            value: @isbn_lookup_result[:isbn], autofocus: true %>
+            value: @lookup_result.isbn, autofocus: true %>
       </div>
     </div>
     <div class="form-group">
@@ -20,7 +20,7 @@
       <div class="col-sm-8">
         <%= f.text_field :title , class: "form-control" ,
         id: "title_field", placeholder: "Title of book",
-        value: @isbn_lookup_result[:title] %>
+        value: @lookup_result.title %>
       </div>
     </div>
     <div class="form-group">
@@ -41,7 +41,7 @@
       <div class="col-sm-8">
         <%= f.text_field :author , class: "form-control" ,
         id: 'author_field',placeholder: "Author's Name",
-        value: @isbn_lookup_result[:author] %>
+        value: @lookup_result.author %>
       </div>
     </div>
     </div>
