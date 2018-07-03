@@ -1,6 +1,7 @@
 $(document).ready ->
   TIMEOUT = null
-  $('body').on 'keyup', 'input#isbn_field', ->
+  TIMEOUT_SECS = 0
+  $('body').on 'change', 'input#isbn_field', ->
     clearTimeout TIMEOUT
     TIMEOUT = setTimeout((->
       ajaxResponse = $.ajax(
@@ -16,6 +17,6 @@ $(document).ready ->
         alert 'Not a valid ISBN'
         return
       return
-    ), 2000)
+    ), TIMEOUT_SECS)
     return
   return

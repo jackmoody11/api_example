@@ -3,7 +3,10 @@ class ListingsController < ApplicationController
 
   def lookup
    @listing = Listing.new
-   @isbn_lookup_result = Listing.amazon_lookup(params[:isbn])
+   # call ListingLookup.query(params[:isbn]) if you want to use Vacuum
+   # or, ListingLookup.new(false).query(params[:isbn])
+   # ... or, ListingLookup.new.query(params[:isbn])
+   @lookup_result = ListingLookup.new(true).query(params[:isbn])
    render partial: 'isbn_lookup_result'
   end
   # GET /listings
